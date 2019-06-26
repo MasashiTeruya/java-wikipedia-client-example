@@ -16,7 +16,7 @@ public class App {
 		String username = System.getenv("WIKIPEDIA_DB_USERNAME");
 		String password = System.getenv("WIKIPEDIA_DB_PASSWORD");
 		String databaseName = System.getenv("WIKIPEDIA_DB_NAME");
-		String url = String.format("jdbc:mysql://%s/%s", databaseHost, databaseName);
+		String url = String.format("jdbc:mysql://%s/%s?characterEncoding=UTF-8", databaseHost, databaseName);
 		try (Connection con = DriverManager.getConnection(url, username, password)) {
 			Integer id = 99;
 			String title = getPageTitleByPageID(con, id);
